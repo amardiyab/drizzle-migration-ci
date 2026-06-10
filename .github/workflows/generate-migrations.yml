@@ -40,6 +40,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "chore: generate drizzle migrations"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+      
+      - name: Push to target repository
+        run: |
+          BRANCH_NAME=${GITHUB_REF#refs/heads/}
+          echo "Pushing branch: $BRANCH_NAME"
+
+          git push \
+            https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/${{ secrets.REPO_OWNER }}/${{ secrets.REPO_NAME }}.git \
+            HEAD:$BRANCH_NAME
