@@ -8,6 +8,13 @@
       "when": 1781088684529,
       "tag": "0000_sweet_archangel",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1781154235240,
+      "tag": "0001_panoramic_wiccan",
+      "breakpoints": true
     }
   ]
 }
